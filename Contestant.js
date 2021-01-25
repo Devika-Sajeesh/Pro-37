@@ -38,5 +38,6 @@ static getContestantInfo() {
       allContestants = data.val()
 })
 }
+
 }
     
