@@ -31,7 +31,7 @@ class Contestant {
   }
 
 
-static getContestantInfo() {
+static getPlayerInfo() {
 
   var contestantInfoRef = database.ref('contestants');
     contestantInfoRef.on("value",(data)=>{
@@ -40,4 +40,4 @@ static getContestantInfo() {
 }
 
 }
-    
+  

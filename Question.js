@@ -2,10 +2,11 @@ class Question {
 
   constructor() {
     //created properties for html elements
-    this.answer = createInput("Type the answer here");
-    this.name = createInput("Enter your name")
-
     this.title = createElement('h2');
+    this.input2 = createInput("Type the answer here");
+    this.input1 = createInput("Enter your name")
+    this.button = createButton('Submit');
+    
 
     this.option1 = createElement('h4');
     this.option2 = createElement('h4');
@@ -13,17 +14,18 @@ class Question {
     this.option4 = createElement('h4');
 
     this.question = createElement('h3');
-    this.greeting = createElement('h2');
+    
 
-    this.button = createButton('Submit');
+    
     
   }
   hide(){
-this.title.hide();
-this.name.hide();
-this.button.hide();
-this.answer.hide();
-    
+    this.title.hide();
+    this.input1.hide();
+    this.button.hide();
+    this.input2.hide();
+// we didnt add this before so question.hide() in play() was not working
+    this.question.hide();
   }
 
   display(){
@@ -47,28 +49,27 @@ this.answer.hide();
 
     this.button.position(290,350);
 
-    this.answer.position(150,230);
-    this.name.position(350,230);
+    this.input2.position(150,230);
+    this.input1.position(350,230);
 
     this.button.mousePressed(()=>{
 
       this.title.hide();
 
-      this.title.html("Result of the game");
-      this.title.position(350,0);
-
-      this.answer.hide();
+      this.input1.hide();
       this.button.hide();
+
+      this.question.hide();
 
       this.option1.hide();
       this.option2.hide();
-      this.option3.hide();
+     this.option3.hide();
       this.option4.hide();
 
-      this.name.hide();
+      this.input2.hide();
 
-      contestant.name = this.name.value();
-      contestant.answer = this.answer.value();
+      contestant.name = this.input1.value();
+      contestant.answer = this.input2.value();
       contestantCount+=1;
       contestant.index = contestantCount;
       contestant.update();

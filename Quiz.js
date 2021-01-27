@@ -35,14 +35,15 @@ class Quiz {
   }
 
      play(){
-
-      question.hide();
+     question.hide();
+      
       background("blue");
-fill(0)
-textSize(30)
-text("Result of the Quiz",340,65)
-text("---------------------------",320,65)
-      contestant.getContestantInfo();
+  fill(0)
+  textSize(30)
+  text("Result of the Quiz",340,65)
+  text("---------------------------",340,85)
+
+  Contestant.getPlayerInfo();
 
 if(allContestants !== undefined){
  var display_Answers = 230;
@@ -57,7 +58,7 @@ if(allContestants !== undefined){
         else
           fill("red");
 
-display_Answer+=30;
+display_Answers+=30;
 textSize(20)
 text(allContestants[plr].name + ": " + allContestants[plr].answer, 250,display_Answers)
       }
